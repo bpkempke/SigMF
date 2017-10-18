@@ -1,6 +1,6 @@
 from setuptools import setup
 
-import sigmf
+from sigmf import __version__
 
 
 shortdesc = "Signal Metadata Format Specification"
@@ -15,7 +15,7 @@ samples, and features of the signal itself.
 
 setup(
     name='SigMF',
-    version=sigmf.__version__,
+    version=__version__,
     description=shortdesc,
     long_description=longdesc,
     url='https://github.com/gnuradio/SigMF',
