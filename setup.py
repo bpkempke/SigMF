@@ -1,5 +1,8 @@
+import sys
 from setuptools import setup
 
+needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
+pytest_runner = ['pytest-runner'] if needs_pytest else []
 
 shortdesc = "Signal Metadata Format Specification"
 longdesc = """
@@ -31,7 +34,7 @@ setup(
     packages=['sigmf'],
     package_data = {'sigmf': ['*.json']},
     install_requires=['six', 'numpy'],
-    setup_requires=['pytest-runner'],
+    setup_requires=pytest_runner,
     tests_require=['pytest>3'],
     zip_safe=False
 )
